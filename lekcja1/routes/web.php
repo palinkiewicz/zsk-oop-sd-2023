@@ -75,4 +75,6 @@ Route::get('/address2/{city}/{street?}/{zipCode?}', function (string $city, stri
     ADDRESS;
 });
 
+Route::redirect('/cityData/{city}/{street?}/{zipCode?}', '/address2/{city}/{street?}/{zipCode?}');
+
 require __DIR__.'/auth.php';
