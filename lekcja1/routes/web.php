@@ -65,4 +65,14 @@ Route::get('/city/{city}/{name}', function (string $city, string $name) {
     ]);
 });
 
+
+Route::get('/address2/{city}/{street?}/{zipCode?}', function (string $city, string $street = null, int $zipCode = null) {
+    $zipCode = substr($zipCode, 0, 2) . '-' . substr($zipCode, 2, 3);
+
+    echo <<< ADDRESS
+        NULLABLE<br>
+        Address: $city, $street $zipCode
+    ADDRESS;
+});
+
 require __DIR__.'/auth.php';
