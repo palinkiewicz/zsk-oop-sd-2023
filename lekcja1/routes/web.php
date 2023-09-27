@@ -58,4 +58,11 @@ Route::get('/address/{city}/{street}/{zipCode}', function (string $city, string 
     ADDRESS;
 });
 
+Route::get('/city/{city}/{name}', function (string $city, string $name) {
+    return view('city', [
+        'city' => $city,
+        'name' => $name
+    ]);
+});
+
 require __DIR__.'/auth.php';
