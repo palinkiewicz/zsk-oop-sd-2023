@@ -34,4 +34,8 @@ Route::get('/helloworld', function () {
 
 Route::redirect('/', 'helloworld');
 
+Route::get('/status', function() {
+    return "Status: " . app("Illuminate\Http\Response") -> status();
+});
+
 require __DIR__.'/auth.php';
