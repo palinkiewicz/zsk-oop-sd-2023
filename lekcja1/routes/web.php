@@ -38,4 +38,24 @@ Route::get('/status', function() {
     return "Status: " . app("Illuminate\Http\Response") -> status();
 });
 
+Route::get('/address/{city}', function (string $city) {
+    echo <<< ADDRESS
+        Address: $city
+    ADDRESS;
+});
+
+Route::get('/address/{city}/{street}', function (string $city, string $street) {
+    echo <<< ADDRESS
+        Address: $city, $street
+    ADDRESS;
+});
+
+Route::get('/address/{city}/{street}/{zipCode}', function (string $city, string $street, int $zipCode) {
+    $zipCode = substr($zipCode, 0, 2) . '-' . substr($zipCode, 2, 3);
+
+    echo <<< ADDRESS
+        Address: $city, $street $zipCode
+    ADDRESS;
+});
+
 require __DIR__.'/auth.php';
