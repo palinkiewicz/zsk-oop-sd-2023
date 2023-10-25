@@ -1,0 +1,80 @@
+  151  cd zsk_opp_sd_2023
+  152  cd zsk_oop_sd_2023
+  153  git add .
+  154  git status
+  155  git commit -m "Add lesson 3 laravel project"
+  156  git push origin main
+  157  git add .
+  158  git commit -m "Create ArrayController"
+  159  git push origin main
+  160  git add .
+  161  git commit -m "Create array controller show route"
+  162  git push origin main
+  163  git add .
+  164  git commit -m "Create user view"
+  165  git push origin main
+  166  git add .
+  167  git commit -m "Display user array data in user view"
+  168  git push origin main
+  169  git add .
+  170  git commit -m "Create user form view"
+  171  git push origin main
+  172  git push origin main
+  173  git push origin main
+  174  git push origin main
+  175  git add .
+  176  git commit -m "Add user form route"
+  177  git add .
+  178  git push origin main
+  179  git add .
+  180  git commit -m "Create UserFormController"
+  181  git push origin main
+  182  mkdir lekcja4_sd
+  183  mkdir somedir
+  184  touch somefile
+  185  git add .
+  186  git status
+  187  git add .
+  188  git status
+  189  cd lekcja4_sd
+  190  git add .
+  191  git status
+  192  git add *
+  193  git status
+  194  ls
+  195  git commit -m "Add file and directory"
+  196  git log --oneline
+  197  touch wakacje
+  198  git add .
+  199  git status
+  200  git commit -m "Add wakacje"
+  201  git log
+  202  git log --oneline
+  203  git checkout 2164e3e
+  204  ls
+  205  git checkout main
+  206  ls
+  207  cat wakacje
+  208  echo wenezuela > wakacje
+  209  cat wakacje
+  210  git add .
+  211  git commit -m "Modify wakacje file"
+  212  git log --oneline
+  213  git revert 2164e3e
+  214  git revert e0cc67a
+  215  git log --oneline
+  216  cat wakacje
+  217  git revert afa24a6
+  218  cat wakacje
+  219  git reset --soft afa24a6
+  220  cat wakacje
+  221  git log --oneline
+  222  git status
+  223  git reset --hard afa24a6
+  224  git status
+  225  cat wakacje
+  226  git push origin main
+  227  history
+  228  history | tail -100 > history.txt
+  229  cat history.txt
+  230  history | tail -80 > history.txt
