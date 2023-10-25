@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 
 class ArrayController extends Controller
 {
-    public function show() {
-        $user = [
+    public function show($user = null) {
+        $user = $user ?: [
             'firstName' => 'Janusz',
             'lastName' => 'Smith',
             'city' => 'Poznań',

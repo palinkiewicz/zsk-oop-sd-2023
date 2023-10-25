@@ -7,10 +7,11 @@
     <title>User Form</title>
 </head>
 <body>
-    <form action="" method="get">
+    <form action="submit_user" method="get">
         <input type="text" name="firstName" placeholder="Provide first name">
         <input type="text" name="lastName" placeholder="Provide last name">
         <input type="text" name="city" placeholder="Provide city">
+        <input type="text" name="hobbies" placeholder="Provide hobbies (use , as a delimeter)">
         <input type="submit" value="Submit data">
     </form>
 </body>

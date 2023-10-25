@@ -31,3 +31,5 @@ Route::middleware([
 Route::get('show_array', [ArrayController::class, 'show']);
 
 Route::view('user_form', 'forms.user');
+
+Route::get('submit_user', [\App\Http\Controllers\UserFormController::class, 'ShowUser']);
