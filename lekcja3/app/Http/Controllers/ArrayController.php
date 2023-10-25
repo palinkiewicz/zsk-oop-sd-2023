@@ -7,6 +7,6 @@ use Illuminate\Http\Request;
 class ArrayController extends Controller
 {
     public function show() {
-        return "ArrayController";
+        return 'ArrayController';
     }
 }
