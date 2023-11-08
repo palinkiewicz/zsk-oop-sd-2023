@@ -12,9 +12,9 @@
         @endforeach
     </ul>
     <form action="register_user" method="get">
-        First name: <input type="text" name="first_name"><br>
-        Last name: <input type="text" name="last_name"><br>
-        Email: <input type="email" name="email"><br>
+        First name: <input type="text" name="first_name" value="{{ old('first_name') }}"><br>
+        Last name: <input type="text" name="last_name" value="{{ old('last_name') }}"><br>
+        Email: <input type="email" name="email" value="{{ old('email') }}"><br>
         <input type="submit" value="Submit">
     </form>
 </body>
