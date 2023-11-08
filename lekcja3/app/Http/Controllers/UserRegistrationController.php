@@ -12,5 +12,6 @@ class UserRegistrationController extends Controller
             'last_name' => 'required | min:3 | max:32',
             'email' => 'required | email | min:2 | max:128'
         ]);
+        return view('show_registered_user', $req->all());
     }
 }
