@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\DBController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,3 +34,7 @@ require __DIR__.'/auth.php';
 Route::view('/user', 'user.user');
 
 Route::get('/showUser', [\App\Http\Controllers\UserControllerForm::class, 'show']);
+
+Route::prefix('/db')->group(function() {
+    Route::get('/users', [DBController::class, 'showUserTable']);
+});
