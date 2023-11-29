@@ -1,0 +1,9 @@
+C:\Users\student\Desktop\zsk_oop_sd_2023\lekcja5_kartk>php artisan make:model -mcrf Product
+
+   INFO  Model [C:\Users\student\Desktop\zsk_oop_sd_2023\lekcja5_kartk\app/Models/Product.php] created successfully.
+
+   INFO  Factory [C:\Users\student\Desktop\zsk_oop_sd_2023\lekcja5_kartk\database/factories/ProductFactory.php] created successfully.
+
+   INFO  Migration [C:\Users\student\Desktop\zsk_oop_sd_2023\lekcja5_kartk\database\migrations/2023_11_29_064521_create_products_table.php] created successfully.
+
+   INFO  Controller [C:\Users\student\Desktop\zsk_oop_sd_2023\lekcja5_kartk\app/Http/Controllers/ProductController.php] created successfully.
