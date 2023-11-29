@@ -38,3 +38,5 @@ Route::get('/showUser', [\App\Http\Controllers\UserControllerForm::class, 'show'
 Route::prefix('/db')->group(function() {
     Route::get('/users', [DBController::class, 'showUserTable']);
 });
+
+Route::resource('product', \App\Http\Controllers\ProductController::class);
