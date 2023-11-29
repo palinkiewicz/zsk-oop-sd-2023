@@ -31,7 +31,7 @@ class ProductController extends Controller
     {
         $request->validate([
             'name' => 'required | max:100',
-            'price' => 'required | numeric | decimal:2',
+            'price' => 'required | numeric | decimal:0,2',
             'description' => 'required'
         ]);
 
@@ -40,6 +40,8 @@ class ProductController extends Controller
         $product->price = $request->input('price');
         $product->description = $request->input('description');
         $product->save();
+
+        return redirect()->route('product.index');
     }
 
     /**
