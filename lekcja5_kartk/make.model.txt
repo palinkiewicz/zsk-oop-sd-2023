@@ -7,3 +7,7 @@ C:\Users\student\Desktop\zsk_oop_sd_2023\lekcja5_kartk>php artisan make:model -m
    INFO  Migration [C:\Users\student\Desktop\zsk_oop_sd_2023\lekcja5_kartk\database\migrations/2023_11_29_064521_create_products_table.php] created successfully.
 
    INFO  Controller [C:\Users\student\Desktop\zsk_oop_sd_2023\lekcja5_kartk\app/Http/Controllers/ProductController.php] created successfully.
+
+m - Migration
+c - Controller (r - CRUD methods)
+f - Factory
