@@ -5,4 +5,10 @@
     <input type="text" name="price" placeholder="Price" value="{{ old('price') }}">
     <input type="text" name="description" placeholder="Description" value="{{ old('description') }}">
     <input type="submit" value="Add">
+
+    <ul>
+        @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+        @endforeach
+    </ul>
 </form>
