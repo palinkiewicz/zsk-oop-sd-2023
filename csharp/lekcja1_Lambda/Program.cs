@@ -58,7 +58,7 @@
 
         static string ReadString(string prompt)
         {
-            string input = "";
+            string input;
 
             do
             {
