@@ -11,6 +11,7 @@
                 4) Wypisz na ekranie zawartość tablicy, listy i słownika.
             */
 
+            // 1)
             int n = ReadInt("Podaj liczbę osób", 0, int.MaxValue);
 
             string[] names = new string[n];
@@ -18,9 +19,17 @@
 
             for (int i = 0; i < n; i++)
             {
-                names[i] = ReadString($"Podaj imię osoby {i + 1}.");
+                string name = ReadString($"Podaj imię osoby {i + 1}.");
+
+                names[i] = name[..1].ToUpper() + name[1..].ToLower();
                 ages[i] = ReadInt($"Podaj wiek osoby {i + 1}.", 0, 150);
             }
+
+            // 2)
+            List<String> namesStartingOnA = names.Where(name => name.StartsWith('A')).ToList();
+
+            Console.WriteLine("Imiona, które zaczynają się na A:");
+            namesStartingOnA.ForEach(name => Console.WriteLine(" - {0}", name));
         }
 
         static string ReadString(string prompt)
