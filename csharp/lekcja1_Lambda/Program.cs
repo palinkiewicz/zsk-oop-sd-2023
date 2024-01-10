@@ -26,10 +26,21 @@
             }
 
             // 2)
-            List<String> namesStartingOnA = names.Where(name => name.StartsWith('A')).ToList();
+            List<string> namesStartingOnA = names.Where(name => name.StartsWith('A')).ToList();
 
             Console.WriteLine("Imiona, które zaczynają się na A:");
             namesStartingOnA.ForEach(name => Console.WriteLine(" - {0}", name));
+
+            // 3)
+            Dictionary<string, int> adults = [];
+
+            for (int i = 0; i < n; i++)
+            {
+                if (ages[i] >= 18)
+                {
+                    adults.Add(names[i], ages[i]);
+                }
+            }
         }
 
         static string ReadString(string prompt)
