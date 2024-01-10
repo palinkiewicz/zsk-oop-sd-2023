@@ -28,9 +28,6 @@
             // 2)
             List<string> namesStartingOnA = names.Where(name => name.StartsWith('A')).ToList();
 
-            Console.WriteLine("Imiona, które zaczynają się na A:");
-            namesStartingOnA.ForEach(name => Console.WriteLine(" - {0}", name));
-
             // 3)
             Dictionary<string, int> adults = [];
 
@@ -40,6 +37,22 @@
                 {
                     adults.Add(names[i], ages[i]);
                 }
+            }
+
+            // 4)
+            Console.WriteLine("Zawartość tablic:");
+            for (int i = 0; i < n; i++)
+            {
+                Console.WriteLine(" - {0}, lat {1}", names[i], ages[i]);
+            }
+
+            Console.WriteLine("Lista imion, które zaczynają się na A:");
+            namesStartingOnA.ForEach(name => Console.WriteLine(" - {0}", name));
+
+            Console.WriteLine("Słownik imion i nazwisk osób pełnoletnich:");
+            foreach (KeyValuePair<string, int> item in adults)
+            {
+                Console.WriteLine(" - {0}, lat {1}", item.Key, item.Value);
             }
         }
 
