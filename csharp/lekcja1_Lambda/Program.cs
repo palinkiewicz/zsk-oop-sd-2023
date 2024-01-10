@@ -10,6 +10,17 @@
                 3) Użyj słownika, aby przechować pary (imie, wiek) dla wszystkich osób, których wiek jest większy niż 18 lat.
                 4) Wypisz na ekranie zawartość tablicy, listy i słownika.
             */
+
+            int n = ReadInt("Podaj liczbę osób", 0, int.MaxValue);
+
+            string[] names = new string[n];
+            int[] ages = new int[n];
+
+            for (int i = 0; i < n; i++)
+            {
+                names[i] = ReadString($"Podaj imię osoby {i + 1}.");
+                ages[i] = ReadInt($"Podaj wiek osoby {i + 1}.", 0, 150);
+            }
         }
 
         static string ReadString(string prompt)
