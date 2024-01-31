@@ -26,5 +26,10 @@ namespace ConsoleApp1.classes
             if (other == null) return 1;
             return Price.CompareTo(other.Price);
         }
+
+        override public string ToString()
+        {
+            return $"{Title}, {Author}, {Year}, {Price}";
+        }
     }
 }
