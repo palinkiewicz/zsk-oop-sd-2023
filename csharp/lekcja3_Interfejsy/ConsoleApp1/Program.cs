@@ -27,13 +27,38 @@ używając metod OrderBy, OrderByDescending i ThenBy z przestrzeni nazw
 System.Linq. Wyświetl posortowane listy na konsoli, używając metody ToString() klasy
 Book.
 */
+using ConsoleApp1.classes;
+
 namespace ConsoleApp1
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            List<Book> books =
+            [
+                new("Pan Tadeusz", "Adam Mickiewicz", 1834, 19.99f),
+                new("Lalka", "Bolesław Prus", 1889, 29.99f),
+                new("Katarynka", "Bolesław Prus", 1880, 23.99f),
+                new("The Little Prince", "Antoine de Saint-Exupéry", 1943, 14.99f)
+            ];
+
+            books.ForEach(book => { Console.WriteLine(book); });
+
+            books.Sort();
+            Console.WriteLine();
+            Console.WriteLine("Posortowane wg ceny");
+            books.ForEach(Console.WriteLine);
+
+            books = [.. books.OrderBy(book => book.Year).ThenBy(book => book.Author)];
+            Console.WriteLine();
+            Console.WriteLine("Posortowane wg roku a potem autora");
+            books.ForEach(Console.WriteLine);
+
+            books = [.. books.OrderByDescending(book => book.Title)];
+            Console.WriteLine();
+            Console.WriteLine("Posortowane wg tytułu od Z do A");
+            books.ForEach(Console.WriteLine);
         }
     }
 }
