@@ -75,6 +75,30 @@ namespace lekcja4_Delegaty
             Console.WriteLine($"Wynik operacji {operation.Method.Name} na liczbach {x} i {y} wynosi {operation(x, y)}");
         }
 
+        public static int GetIntFromUser(string prompt)
+        {
+            int result = 0;
+            bool valid = true;
+
+            do
+            {
+                if (!valid)
+                {
+                    Console.WriteLine("Błąd. Należy podać liczbę całkowitą");
+                }
+                else if (result < 0)
+                {
+                    Console.WriteLine("Błąd. Liczba nie może być mniejsza od 0");
+                }
+
+                Console.Write($"{prompt}: ");
+                valid = int.TryParse(Console.ReadLine(), out result);
+            }
+            while ( !valid || result < 0 );
+
+            return result;
+        }
+
         static void Main(string[] args)
         {
             Console.WriteLine("Hello, World!");
