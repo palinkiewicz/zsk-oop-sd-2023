@@ -64,6 +64,17 @@ namespace lekcja4_Delegaty
             return x / y;
         }
 
+        public static void DisplayResult(Operation operation, int x, int y)
+        {
+            if (operation.Method.Name == "Divide" && y == 0)
+            {
+                Console.WriteLine("Błąd. Dzielenie przez 0!");
+                return;
+            }
+
+            Console.WriteLine($"Wynik operacji {operation.Method.Name} na liczbach {x} i {y} wynosi {operation(x, y)}");
+        }
+
         static void Main(string[] args)
         {
             Console.WriteLine("Hello, World!");
