@@ -101,7 +101,18 @@ namespace lekcja4_Delegaty
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            int a = GetIntFromUser("Podaj liczbę a");
+            int b = GetIntFromUser("Podaj liczbę b");
+
+            Operation addition = new Operation(Add);
+            Operation subtraction = new Operation(Subtract);
+            Operation multiplication = new Operation(Multiply);
+            Operation division = new Operation(Divide);
+
+            DisplayResult(addition, a, b);
+            DisplayResult(subtraction, a, b);
+            DisplayResult(multiplication, a, b);
+            DisplayResult(division, a, b);
         }
     }
 }
