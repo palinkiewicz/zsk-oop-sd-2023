@@ -32,6 +32,14 @@ namespace lekcja5_1_Zdarzenia
         }
     }
 
+    public class Subscriber
+    {
+        public void OnMessageReceived(string message)
+        {
+            Console.WriteLine(message);
+        }
+    }
+
     internal class Program
     {
         static void Main(string[] args)
