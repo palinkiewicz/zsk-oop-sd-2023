@@ -22,6 +22,16 @@ namespace lekcja5_1_Zdarzenia
 {
     public delegate void MessageHandler(string message);
 
+    public class Publisher
+    {
+        public event MessageHandler MessageEvent;
+
+        public void SendMessage(string message)
+        {
+            MessageEvent?.Invoke(message);
+        }
+    }
+
     internal class Program
     {
         static void Main(string[] args)
