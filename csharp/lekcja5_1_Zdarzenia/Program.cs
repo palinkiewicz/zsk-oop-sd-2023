@@ -44,7 +44,19 @@ namespace lekcja5_1_Zdarzenia
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            Publisher pub = new();
+            Subscriber sub = new();
+
+            pub.MessageEvent += sub.OnMessageReceived;
+
+            pub.SendMessage("Hello");
+            pub.SendMessage("Second message");
+
+            pub.MessageEvent -= sub.OnMessageReceived;
+            pub.SendMessage("This won't display");
+
+            pub.MessageEvent += sub.OnMessageReceived;
+            pub.SendMessage("Hello again");
         }
     }
 }
