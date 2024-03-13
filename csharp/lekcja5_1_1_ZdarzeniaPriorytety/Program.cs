@@ -18,7 +18,18 @@ subskrybent otrzymuje wiadomości.
 o Anuluj subskrypcję zdarzenia i wywołaj metodę SendMessage ponownie. Sprawdź,
 czy subskrybent nadal otrzymuje wiadomości
 */
-namespace lekcja5_1_Zdarzenia
+
+/*
+samodzielne wykonanie
+o Zdefiniuj klasę Program z metodą Main, która jest punktem wejścia programu.
+o W metodzie Main utwórz obiekty klasy Publisher i dwóch obiektów klasy Subscriber.
+Nadaj im odpowiednie wartości pól Threshold i Name.
+o Zasubskrybuj zdarzenie MessageEvent za pomocą metody OnMessageReceived dla
+obu subskrybentów.
+o Wywołaj metodę SendMessage kilka razy z różnymi parametrami i sprawdź, czy
+subskrybenci otrzymują tylko te wiadomości, które spełniają ich próg priorytetu.2137
+*/
+namespace lekcja5_1_1_Zdarzenia
 {
     public delegate void MessageHandler(string message);
 
