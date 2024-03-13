@@ -31,23 +31,39 @@ subskrybenci otrzymują tylko te wiadomości, które spełniają ich próg prior
 */
 namespace lekcja5_1_1_Zdarzenia
 {
-    public delegate void MessageHandler(string message);
+    public delegate void MessageHandler(string message, int priority);
 
     public class Publisher
     {
         public event MessageHandler MessageEvent;
 
-        public void SendMessage(string message)
+        public void SendMessage(string message, int priority)
         {
-            MessageEvent?.Invoke(message);
+            MessageEvent?.Invoke(message, priority);
         }
     }
 
     public class Subscriber
     {
-        public void OnMessageReceived(string message)
+        public int Threshold;
+        public string Name;
+
+        public Subscriber(int threshold, string name)
         {
-            Console.WriteLine(message);
+            Threshold = threshold;
+            Name = name;
+        }
+
+        public void OnMessageReceived(string message, int priority)
+        {
+            if (priority <= Threshold)
+            {
+                Console.WriteLine("{0} otrzymał wiadomość \"{1}\" o priorytecie {2}", Name, message, priority);
+            }
+            else
+            {
+                Console.WriteLine("{0} nie otrzymał wiadomości o priorytecie {1}", Name, priority);
+            }
         }
     }
 
@@ -56,18 +72,19 @@ namespace lekcja5_1_1_Zdarzenia
         static void Main(string[] args)
         {
             Publisher pub = new();
-            Subscriber sub = new();
+            Subscriber sub1 = new(2, "Subscriber 1");
+            Subscriber sub2 = new(5, "Subscriber 2");
 
-            pub.MessageEvent += sub.OnMessageReceived;
+            pub.MessageEvent += sub1.OnMessageReceived;
 
-            pub.SendMessage("Hello");
-            pub.SendMessage("Second message");
+            pub.SendMessage("Hello sub1", 1);
 
-            pub.MessageEvent -= sub.OnMessageReceived;
-            pub.SendMessage("This won't display");
+            pub.MessageEvent += sub2.OnMessageReceived;
 
-            pub.MessageEvent += sub.OnMessageReceived;
-            pub.SendMessage("Hello again");
+            pub.SendMessage("Hello everyone", 1);
+            pub.SendMessage("Second message", 3);
+            pub.SendMessage("This won't display", 6);
+            pub.SendMessage("Hello again", 2);
         }
     }
 }
